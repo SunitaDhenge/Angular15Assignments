@@ -1,0 +1,21 @@
+<h3>Task 2 & 4 </h3>
+<h3  align="center">Working with Custom Pipes in Angular</h3>
+<hr/>
+<button *ngFor="let deptno of deptlist" (click)="Click('deptno',deptno)"> {{deptno}}</button>
+<br/>
+<button *ngFor="let job of joblist" (click)="Click('job',job)"> {{job}}</button>
+<br/>
+<table  border="2" cellspacing="0" width="600">
+    <tr>
+        <th>Employee Number</th>
+        <th>Employee Name</th>
+        <th>Employee Job</th>
+        <th>Employee Deptno</th>       
+    </tr>
+    <tr *ngFor="let item of empsArray | filter : prop : value">
+        <td>{{item.empno}} </td>
+        <td>{{item.ename}}</td>
+        <td>{{item.job}}</td>
+        <td>{{item.deptno}}</td>       
+    </tr>
+</table>

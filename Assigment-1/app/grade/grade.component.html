@@ -1,0 +1,15 @@
+<h3>Task 1 </h3>
+<h3  align="center">Employee Details</h3>
+<hr/>
+<table border="2" width="200">
+  <tr>
+      <th>Sr. No</th>
+      <th>Employee Name</th>
+      <th>Performance Grades</th>
+  </tr>    
+  <tr *ngFor="let item of usersArray;let i=index">
+      <td>{{i+1}}</td>
+      <td>{{item.uname | uppercase }}</td>
+      <td>{{item.grade | grade   }}</td>
+  </tr>
+</table>

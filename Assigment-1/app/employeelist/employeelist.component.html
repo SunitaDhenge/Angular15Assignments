@@ -1,0 +1,21 @@
+<h3>Task 3 </h3>
+<h3  align="center">Working with slice pipe</h3>
+<hr/>
+<button *ngIf="count<empsArray.length" (click)="load()"> Load More</button>
+<br/>
+<button *ngIf="count>=empsArray.length" (click)="reset()"> Reset</button>
+<br/>
+<table  border="2" cellspacing="0" width="600">
+    <tr>
+        <th>Employee Number</th>
+        <th>Employee Name</th>
+        <th>Employee Job</th>
+        <th>Employee Deptno</th>       
+    </tr>
+    <tr *ngFor="let item of empsArray | range : 0 : count">
+        <td>{{item.empno}} </td>
+        <td>{{item.ename}}</td>
+        <td>{{item.job}}</td>
+        <td>{{item.dept}}</td>       
+    </tr>
+</table>

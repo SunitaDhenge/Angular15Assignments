@@ -1,0 +1,22 @@
+<h3 align="center">Task 1 - Attribute Directive</h3>
+
+<h3> Default Text</h3>
+<h3 appShadow="Green"> Text in Green</h3>
+<h3 appShadow="Blue"> Text in blue</h3>
+
+<hr />
+<h3 align="center">Task 2 - structural Directive for Admin users</h3>
+<h3>All Users</h3>
+<span *ngFor="let item of empList" class="c1">
+
+        <b>  {{item.ename}},  </b>
+</span>
+<br/>
+<h3>Admin Users</h3>
+<div *ngFor="let item of empList" class="c1">
+    <span *appIsAdmin="getJobName(item.jobno)">
+        <u> Welcome : {{item.ename}} </u> <br />
+        EmpNo : <span style="margin: 2px;color:Red;"> {{item.empno}} </span> 
+        Job  : <span style="color:Green;">{{getJobName(item.jobno)}}</span><br /><br />
+    </span>
+</div>

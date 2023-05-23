@@ -1,0 +1,8 @@
+<h3>Task 2 & 3 </h3>
+<h3 align="center">2. Nested child component for job {{job?.jobname}} </h3>
+<h4 align="center">3. For All job, you can filter the records by clicking job button </h4>
+<br/>
+<a class="hyperlink" *ngFor="let job of jobList" (click)="Click(job)"> {{job.jobname}}</a>
+<br/>
+<br/>
+<app-employee [job]="job" (click)="Change($event)"></app-employee>

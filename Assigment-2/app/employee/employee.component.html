@@ -1,0 +1,22 @@
+<style>
+    .c1 {
+      border: 1px solid gray;
+      border-radius: 10px;
+      width: 150px;
+      padding: 5px;
+      text-align: center;
+      margin: 5px;
+      float: left;
+      box-shadow: 5px 5px 2px black;
+    }
+  </style>
+  
+  <!-- <h1>Selected Location  : {{loc}}</h1> -->
+  
+  <div *ngFor="let item of filteredArray" class="c1">
+    <h3 style="margin: 2px;color:Red;"> {{item.empno}} </h3>
+    <u> Name : {{item.ename}} </u> <br />
+    <u *ngIf="showButton()" > job : <button (click)="Click(item)"> {{getJob(item.jobno)}} </button></u>  
+    <u *ngIf="!showButton()" > job :   {{getJob(item.jobno)}} </u> <br />
+    dept : <span style="color:Green;" >{{getDept(item.deptno)}} </span> <br />
+  </div>

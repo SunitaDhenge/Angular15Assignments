@@ -1,0 +1,51 @@
+<h3 align="center">Task 1 - Template Form</h3>
+<hr />
+
+<form #customerForm="ngForm" (ngSubmit)="submit_click()">
+    <fieldset>
+        <legend>Vehicle Registration Form</legend>
+        <label>Owner Name : </label>
+        <input type="text" [(ngModel)]="OwnerName" name="t_OwnerName" #t_OwnerName="ngModel" required="true" />
+
+        <span *ngIf="t_OwnerName.invalid && t_OwnerName.touched" class="error">Owner Name is required</span>
+        <br /><br />
+
+        <label>Contact Number : </label>
+        <input type="text" [(ngModel)]="ContactNumber" pattern="\d{10}" name="t_ContactNumber"
+            #t_ContactNumber="ngModel" required="true" />
+        <span *ngIf="t_ContactNumber.invalid && t_ContactNumber.touched && t_ContactNumber.value==''" class="error">
+            Contact Number is required</span>
+        <span *ngIf="t_ContactNumber.invalid && t_ContactNumber.touched && t_ContactNumber.value!=''" class="error">
+            Contact Number should be 10 digits</span>
+        <br /><br />
+
+        Email :
+        <input type="text" [(ngModel)]="OwnerEmail" name="t_OwnerEmail" #t_OwnerEmail="ngModel" email="true"
+         />
+
+        <span class="error" *ngIf="t_OwnerEmail.invalid && t_OwnerEmail.touched">
+            Enter valid email address
+        </span>
+        <br><br>
+
+        Registration Number :
+        <input type="text" [(ngModel)]="RegNumber" name="t_RegNumber" #t_RegNumber="ngModel" pattern="^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$"/>
+
+        <span class="error" *ngIf="t_RegNumber.invalid && t_RegNumber.touched">
+            Enter valid Registration Number
+        </span>
+        <br><br>
+
+
+        Address :
+        <input type="text" [(ngModel)]="Address" name="t_Address" #t_Address="ngModel"  />
+
+        <span class="error" *ngIf="t_Address.invalid && t_Address.touched">
+            Address is required
+        </span>
+        <br><br>
+
+        <input type="submit" value="Register" [disabled]="customerForm.invalid" />
+
+    </fieldset>
+</form>

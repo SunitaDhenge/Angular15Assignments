@@ -1,0 +1,21 @@
+.form-group
+{
+    padding-bottom: 20px;
+}
+label
+{
+    padding-right: 20px;
+    width: 100px;
+}
+.invalid-feedback
+{
+    color:red;
+}
+button
+{
+    margin-right: 50px;
+}
+.invalid-feedback
+{
+    margin-left: 20px;
+}

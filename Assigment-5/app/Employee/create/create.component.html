@@ -1,0 +1,42 @@
+<h3 align="center">Task 2 - Create Employee</h3>
+<hr />
+<div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-5">
+                <label>Name</label>
+                <input type="text" formControlName="ename" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['ename'].errors }" />
+                <span *ngIf="submitted && f['ename'].errors" class="invalid-feedback">
+                    <span *ngIf="f['ename'].errors['required']">Name is required</span>
+                </span>
+            </div>
+            <div class="form-group col-5">
+                <label>Job</label>
+                <input type="text" formControlName="job" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['job'].errors }" />
+                <span *ngIf="submitted && f['job'].errors" class="invalid-feedback">
+                    <span *ngIf="f['job'].errors['required']">Job  is required</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Salary</label>
+            <input type="salary" formControlName="salary" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['salary'].errors }" />
+            <span *ngIf="submitted && f['salary'].errors" class="invalid-feedback">
+                <span *ngIf="f['salary'].errors['required'] || f['salary'].errors['pattern']">Number is required</span>
+            </span>
+        </div>
+        <div class="form-group col-5">
+            <label>deptno</label>
+            <input type="text" formControlName="deptno" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['deptno'].errors }" />
+            <span *ngIf="submitted && f['deptno'].errors" class="invalid-feedback">
+                <span *ngIf="f['deptno'].errors['required']">Department is required</span>
+                <span *ngIf="f['deptno'].errors['min'] || f['deptno'].errors['max']">Department must be between 10 to 20</span>
+            </span>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary mr-1">Create</button>
+            <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+        </div>
+    </form>
+</div>

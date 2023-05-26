@@ -1,0 +1,9 @@
+<p>Task 1 </p>
+<hr/>
+
+<button (click)="buttonClick()">Load next Department</button>
+
+<div *ngFor="let item of deptList" >
+    <span>Department : {{item.deptno}} - {{item.deptname}}</span>
+    <span>Manager Name : {{item.managername}}</span>
+</div>

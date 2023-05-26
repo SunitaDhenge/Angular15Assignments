@@ -1,0 +1,12 @@
+<p>Task 3 </p>
+<hr/>
+
+<input type="text" [(ngModel)]="age"> 
+<button (click)="buttonClick()">get Persons</button>
+<br/>
+<br/>
+<div>{{msg}}</div>
+<br/>
+<div *ngFor="let p of person" >
+    <span> Name : {{p.name}}, Age : {{p.age}} </span>
+</div>

@@ -1,0 +1,14 @@
+<fieldset *ngIf="showLogin()">
+    <legend>User Login</legend>
+    User Id : <input [(ngModel)]="uid" />
+    <br /><br />
+    Password : <input type="password" [(ngModel)]="pwd" />
+    <br /><br />
+    <input type="button" value="Login" (click)="loginButton_click()" />
+
+    <p style="color:red;"> {{result}} </p>
+
+</fieldset>
+<fieldset *ngIf="!showLogin()" style="text-align: center;">
+    You have already logged in
+</fieldset>

@@ -1,0 +1,18 @@
+<h1 align="center">{{title}}</h1>
+<hr />
+<h2>Task 1 & 2</h2>
+<div style="text-align:center;">
+        <a  [routerLink]="  ['/']  " >Home</a> |
+        <a  [routerLink]="  ['/Emps']  " >Employees</a> |
+        <a  [routerLink]="  ['/Depts']  " >Deptartments</a> |
+        <a  [routerLink]="  ['/Aboutus']  " >About Us</a> |
+        <a  [routerLink]="  ['/ABC']  " >Invalid</a> |
+        <a  [routerLink]="  ['/Login']  " >Login</a> |
+        <a *ngIf="checkLink('admin')" [routerLink]="  ['/admin']  " >Admin</a> |
+        <a *ngIf="checkLink('Logoff')" [routerLink]="  ['/Logoff']  " >Logoff</a> 
+
+        <a style="float: right">{{getUser()}}</a>
+</div>
+<hr/>
+
+<router-outlet></router-outlet>
